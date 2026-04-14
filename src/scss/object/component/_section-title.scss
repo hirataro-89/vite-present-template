@@ -1,0 +1,19 @@
+@use "../../foundation/variables" as *;
+
+.c-section-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: $color-text;
+  
+  &__sub {
+    display: block;
+    font-size: 0.875rem;
+    color: $color-primary;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+}

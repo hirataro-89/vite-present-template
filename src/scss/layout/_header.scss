@@ -1,0 +1,37 @@
+@use "../foundation/variables" as *;
+
+.l-header {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 2rem;
+  background-color: $color-white;
+  
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $color-primary;
+    transition: color 0.3s;
+  }
+  
+  &__nav {
+    ul {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    a {
+      font-weight: bold;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
