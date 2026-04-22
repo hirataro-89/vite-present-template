@@ -1,24 +1,17 @@
 import { defineConfig } from 'vite';
-import sassGlobImports from 'vite-plugin-sass-glob-import';
 import { resolve } from 'path';
+import sassGlobImports from 'vite-plugin-sass-glob-import';
 
 export default defineConfig({
+  root: resolve(__dirname, 'src'),
+  server: {
+    open: true
+  },
   plugins: [
     sassGlobImports()
   ],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src')
-    }
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "@/scss/foundation/variables" as *;`
-      }
-    }
-  },
   build: {
-    outDir: 'dist'
+    outDir: resolve(__dirname, 'dist'),
+    emptyOutDir: true
   }
 });
