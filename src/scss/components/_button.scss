@@ -1,0 +1,43 @@
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0.875rem;
+  padding-inline: 2.5rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.c-button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.c-button--primary:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.c-button--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.c-button--outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+// サイズ違い（ヘッダーなど、少し小さくしたいとき）
+.c-button--sm {
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  font-size: 0.875rem;
+}

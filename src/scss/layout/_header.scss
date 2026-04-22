@@ -1,37 +1,37 @@
-@use "../foundation/variables" as *;
-
 .l-header {
-  border-bottom: 1px solid #e2e8f0;
-  padding: 1rem 2rem;
-  background-color: $color-white;
-  
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  &__logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: $color-primary;
-    transition: color 0.3s;
-  }
-  
-  &__nav {
-    ul {
-      display: flex;
-      gap: 2rem;
-    }
-    
-    a {
-      font-weight: bold;
-      transition: color 0.3s ease;
-      &:hover {
-        color: $color-primary;
-      }
-    }
-  }
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.l-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.75rem;
+}
+
+.l-header__logo-link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  transition: opacity var(--transition-base);
+}
+
+.l-header__logo-link:hover {
+  opacity: 0.75;
+}
+
+.l-header__nav-list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.l-header__nav-link {
+  font-weight: bold;
+  transition: color var(--transition-base);
+}
+
+.l-header__nav-link:hover {
+  color: var(--color-primary);
 }

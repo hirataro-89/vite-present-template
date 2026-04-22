@@ -1,9 +1,7 @@
-@use "variables" as *;
-
 body {
-  font-family: $font-family-base;
-  color: $color-text;
-  background-color: $color-white;
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  background-color: var(--color-white);
   line-height: 1.6;
 }
 
