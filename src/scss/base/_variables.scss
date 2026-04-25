@@ -1,0 +1,23 @@
+:root {
+  // Colors
+  --color-primary: #007bff;
+  --color-text: #333;
+  --color-text-muted: #555;
+  --color-bg: #f8f9fa;
+  --color-white: #fff;
+  --color-border: #e2e8f0;
+  --color-footer-bg: #1a202c;
+
+  // Typography
+  --font-family-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+
+  // Layout
+  // min() で 100% と比較するため px 単位必須
+  --container-max-width: 1200px;
+  --container-padding: 2rem;
+
+  // Effects
+  --transition-base: 0.3s ease;
+  --radius-pill: calc(infinity * 1px);
+}
