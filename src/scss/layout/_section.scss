@@ -1,6 +1,6 @@
 @scope (.section) {
   :scope {
-    padding-block: 5rem;
+    padding-block: var(--section-padding-y);
   }
 
   .text {
