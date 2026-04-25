@@ -1,18 +1,19 @@
-// 汎用セクション
-.l-section {
-  padding-block: 5rem;
-  text-align: center;
-}
+@scope (.section) {
+  :scope {
+    padding-block: 5rem;
+    text-align: center;
+  }
 
-.l-section__text {
-  max-width: 700px;
-  margin-inline: auto;
-  margin-block-end: 2.5rem;
-}
+  .text {
+    max-width: 700px;
+    margin-inline: auto;
+    margin-block-end: 2.5rem;
+  }
 
-.l-section__buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
 }

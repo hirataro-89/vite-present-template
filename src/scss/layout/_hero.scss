@@ -1,0 +1,23 @@
+@scope (.hero) {
+  :scope {
+    background-color: var(--color-bg);
+    padding-block: 6rem;
+    text-align: center;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.3;
+    color: var(--color-text);
+    margin-block-end: 1.5rem;
+  }
+
+  .sub-title {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    max-width: 800px;
+    margin-inline: auto;
+  }
+}
