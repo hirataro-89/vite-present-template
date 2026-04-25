@@ -1,4 +1,7 @@
 .section-title {
+  --bar-width: 40px;
+  --bar-height: 3px;
+
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -9,8 +12,8 @@
   &::after {
     content: "";
     display: block;
-    width: 40px;
-    height: 3px;
+    width: var(--bar-width);
+    height: var(--bar-height);
     background-color: var(--color-primary);
     margin-block-start: 1rem;
     margin-inline: auto;
