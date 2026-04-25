@@ -1,46 +1,44 @@
-.button {
+.button,
+.button-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding-block: 0.875rem;
   padding-inline: 2.5rem;
   border-radius: var(--radius-pill);
-  border: 2px solid transparent;
+  font-size: var(--btn-font-size, 1rem);
   font-weight: bold;
-  font-size: 1rem;
   line-height: 1;
-  text-align: center;
   transition: all var(--transition-base);
 }
 
-// Variants（色）
-.button[data-variant="primary"] {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
+.button {
+  --btn-bg: var(--color-primary);
+  --btn-color: var(--color-white);
+
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border: 2px solid var(--btn-bg);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: transparent;
+      color: var(--btn-bg);
+    }
+  }
 }
 
-.button[data-variant="outline"] {
+.button-outline {
+  --btn-bg: var(--color-primary);
+
   background-color: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-}
+  color: var(--btn-bg);
+  border: 2px solid var(--btn-bg);
 
-@media (any-hover: hover) {
-  .button[data-variant="primary"]:hover {
-    background-color: transparent;
-    color: var(--color-primary);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--btn-bg);
+      color: var(--color-white);
+    }
   }
-
-  .button[data-variant="outline"]:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-  }
-}
-
-// Sizes（サイズ）
-.button[data-size="sm"] {
-  padding-block: 0.5rem;
-  padding-inline: 1.25rem;
-  font-size: 0.875rem;
 }
