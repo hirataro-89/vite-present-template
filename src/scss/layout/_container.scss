@@ -1,5 +1,4 @@
-// 共通インナー（最大幅＋左右余白）
-.l-inner {
+.container {
   width: min(var(--container-max-width), 100%);
   margin-inline: auto;
   padding-inline: var(--container-padding);
