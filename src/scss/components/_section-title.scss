@@ -1,4 +1,4 @@
-.c-section-title {
+.section-title {
   position: relative;
   font-size: 2rem;
   font-weight: bold;
@@ -9,7 +9,7 @@
   text-transform: capitalize;
 }
 
-.c-section-title::after {
+.section-title::after {
   content: "";
   position: absolute;
   bottom: 0;

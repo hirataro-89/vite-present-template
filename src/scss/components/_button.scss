@@ -1,4 +1,4 @@
-.c-button {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -13,30 +13,33 @@
   transition: all var(--transition-base);
 }
 
-.c-button--primary {
+// Variants（色）
+.button[data-variant="primary"] {
   background-color: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
 }
 
-.c-button--primary:hover {
-  background-color: transparent;
-  color: var(--color-primary);
-}
-
-.c-button--outline {
+.button[data-variant="outline"] {
   background-color: transparent;
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.c-button--outline:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+@media (any-hover: hover) {
+  .button[data-variant="primary"]:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+  }
+
+  .button[data-variant="outline"]:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
 }
 
-// サイズ違い（ヘッダーなど、少し小さくしたいとき）
-.c-button--sm {
+// Sizes（サイズ）
+.button[data-size="sm"] {
   padding-block: 0.5rem;
   padding-inline: 1.25rem;
   font-size: 0.875rem;
