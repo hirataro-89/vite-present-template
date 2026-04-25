@@ -1,3 +1,10 @@
-@use "foundation";
-@use "layout/**";
-@use "components/**";
+@use "base/variables";
+@use "base/reset";
+@use "base/base";
+@use "layout/container";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/hero";
+@use "layout/section";
+@use "components/button";
+@use "components/section-title";
