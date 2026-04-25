@@ -1,5 +1,7 @@
 .button,
 .button-outline {
+  --btn-bg: var(--color-primary);
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -9,11 +11,10 @@
   font-size: var(--btn-font-size, 1rem);
   font-weight: bold;
   line-height: 1;
-  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 .button {
-  --btn-bg: var(--color-primary);
   --btn-color: var(--color-white);
 
   background-color: var(--btn-bg);
@@ -29,8 +30,6 @@
 }
 
 .button-outline {
-  --btn-bg: var(--color-primary);
-
   background-color: transparent;
   color: var(--btn-bg);
   border: 2px solid var(--btn-bg);
