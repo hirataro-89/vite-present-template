@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 @scope (.header) {
   :scope {
     background-color: var(--color-white);
@@ -6,16 +8,28 @@
 
   .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding-block: 1.75rem;
+    gap: 1rem;
+    padding-block: 1rem;
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+      padding-block: 1.75rem;
+    }
   }
 
   .logo-link {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     color: var(--color-primary);
     transition: opacity var(--transition-base);
+
+    @include mq(md) {
+      font-size: 1.5rem;
+    }
 
     @media (any-hover: hover) {
       &:hover {
@@ -26,8 +40,15 @@
 
   .nav-list {
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap: 1rem;
+
+    @include mq(md) {
+      flex-wrap: nowrap;
+      gap: 2rem;
+    }
   }
 
   .nav-link {
