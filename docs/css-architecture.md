@@ -106,6 +106,66 @@ src/scss/
 
 ---
 
+## レスポンシブ対応
+
+### `@include mq()` mixin（SPファースト）
+
+`base/_breakpoints.scss` に Sass mixin を定義しています。`min-width` ベースの SPファースト設計です。
+
+```scss
+$breakpoints: (
+  sm: 600px,
+  md: 768px,   // デフォルト
+  lg: 1024px,
+  xl: 1440px,
+);
+```
+
+### 使い方
+
+mixin を使いたい SCSS ファイルの先頭で `@use` してから呼び出します。
+
+```scss
+@use "../base/breakpoints" as *;
+
+.foo {
+  font-size: 1rem;
+
+  @include mq(md) {
+    font-size: 1.25rem;
+  }
+
+  @include mq(lg) {
+    font-size: 1.5rem;
+  }
+}
+```
+
+引数省略時は `md`（768px）が使われます。
+
+### CSS変数を使ったレスポンシブ（推奨）
+
+このテンプレートでは、各コンポーネントで `mq()` を散らすのではなく、`_variables.scss` で **CSS変数自体をレスポンシブにする** アプローチを採っています。
+
+```scss
+// _variables.scss
+:root {
+  --container-padding: 1rem;
+  --section-padding-y: 3rem;
+}
+
+@include mq(md) {
+  :root {
+    --container-padding: 2rem;
+    --section-padding-y: 5rem;
+  }
+}
+```
+
+これにより、`var(--section-padding-y)` を参照しているすべての箇所（hero / section）が自動的にレスポンシブになります。コンポーネント側の SCSS は `mq()` を意識する必要がありません。
+
+---
+
 ## ブラウザサポート
 
 | 機能 | 対応 |

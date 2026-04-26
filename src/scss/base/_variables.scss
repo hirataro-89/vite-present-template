@@ -1,3 +1,5 @@
+@use "breakpoints" as *;
+
 :root {
   // Colors
   --color-primary: #007bff;
@@ -12,13 +14,20 @@
   --font-family-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
     "Hiragino Sans", Meiryo, sans-serif;
 
-  // Layout
-  // min() で 100% と比較するため px 単位必須
+  // Layout（SPファーストの初期値）
   --container-max-width: 1200px;
-  --container-padding: 2rem;
-  --section-padding-y: 5rem;
+  --container-padding: 1rem;
+  --section-padding-y: 3rem;
 
   // Effects
   --transition-base: 0.3s ease;
   --radius-pill: calc(infinity * 1px);
+}
+
+// md（768px）以上で値を上書き
+@include mq(md) {
+  :root {
+    --container-padding: 2rem;
+    --section-padding-y: 5rem;
+  }
 }
