@@ -1,33 +1,69 @@
 @use "breakpoints" as *;
 
 :root {
-  // Colors
-  --color-primary: #007bff;
-  --color-text: #333;
-  --color-text-muted: #555;
-  --color-bg: #f8f9fa;
-  --color-white: #fff;
-  --color-border: #e2e8f0;
-  --color-footer-bg: #1a202c;
+  // ─────────────────────────────────────────────
+  // Brand Color（指定: #5ED4EE / #D4F4F8 系）
+  // ─────────────────────────────────────────────
+  --color-brand: #5ed4ee;
+  --color-brand-dark: #1a8fa8; // テキスト用にコントラスト確保
+  --color-brand-soft: #eaf7fa; // hero背景用に少し落としたトーン
 
+  // ─────────────────────────────────────────────
+  // Neutral（warm off-white 〜 warm sand のレイヤー）
+  //   真っ白を避け、生活感のある温かみのある中性色で構成
+  // ─────────────────────────────────────────────
+  --color-neutral-50: #fcfbf8; // page background
+  --color-neutral-100: #f4f1ea; // section-alt（warm sand）
+  --color-neutral-200: #e8e4da; // border
+  --color-neutral-700: #5b6770; // sub text
+  --color-neutral-900: #1f2933; // main text
+  --color-neutral-950: #1b2530; // footer bg
+
+  // ─────────────────────────────────────────────
+  // Semantic Tokens（実装時はこちらを参照する）
+  // ─────────────────────────────────────────────
+  --color-primary: var(--color-brand);
+  --color-primary-dark: var(--color-brand-dark);
+
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-700);
+  --color-text-on-primary: #ffffff;
+  --color-text-on-dark: #ffffff;
+
+  --color-bg: var(--color-neutral-50); // ページ全体の地
+  --color-bg-hero: var(--color-brand-soft); // ヒーローのみ水色
+  --color-bg-alt: var(--color-neutral-100); // section-alt（warm sand）
+  --color-surface: #ffffff; // カード等の浮いた面
+  --color-border: var(--color-neutral-200);
+  --color-footer-bg: var(--color-neutral-950);
+
+  // ─────────────────────────────────────────────
   // Typography
-  --font-family-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", Meiryo, sans-serif;
+  // ─────────────────────────────────────────────
+  --font-family-base: "Noto Sans JP", "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
+  // ─────────────────────────────────────────────
   // Layout（SPファーストの初期値）
+  // ─────────────────────────────────────────────
   --container-max-width: 1200px;
   --container-padding: 1rem;
   --section-padding-y: 3rem;
 
+  // ─────────────────────────────────────────────
   // Effects
+  // ─────────────────────────────────────────────
   --transition-base: 0.3s ease;
   --radius-pill: calc(infinity * 1px);
+  --radius-card: 12px;
+  --shadow-card: 0 1px 2px rgba(31, 41, 51, 0.04),
+    0 4px 12px rgba(31, 41, 51, 0.04);
 }
 
 // md（768px）以上で値を上書き
 @include mq(md) {
   :root {
     --container-padding: 2rem;
-    --section-padding-y: 5rem;
+    --section-padding-y: 6rem;
   }
 }

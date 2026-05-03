@@ -1,8 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family-base);
   color: var(--color-text);
-  background-color: var(--color-white);
-  line-height: 1.6;
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {

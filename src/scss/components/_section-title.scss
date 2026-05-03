@@ -1,13 +1,12 @@
 .section-title {
-  --bar-width: 40px;
-  --bar-height: 3px;
+  --bar-width: 32px;
+  --bar-height: 2px;
 
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.625rem;
+  font-weight: 700;
   text-align: center;
   color: var(--color-text);
   margin-block-end: 2.5rem;
-  text-transform: capitalize;
 
   &::after {
     content: "";
@@ -15,7 +14,7 @@
     width: var(--bar-width);
     height: var(--bar-height);
     background-color: var(--color-primary);
-    margin-block-start: 1rem;
+    margin-block-start: 0.875rem;
     margin-inline: auto;
   }
 }

@@ -1,6 +1,7 @@
 .button,
 .button-outline {
-  --btn-bg: var(--color-primary);
+  --btn-bg: var(--color-primary-dark);
+  --btn-color: var(--color-text-on-primary);
 
   display: inline-flex;
   align-items: center;
@@ -11,12 +12,12 @@
   font-size: var(--btn-font-size, 1rem);
   font-weight: bold;
   line-height: 1;
-  transition: background-color var(--transition-base), color var(--transition-base);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
 }
 
 .button {
-  --btn-color: var(--color-white);
-
   background-color: var(--btn-bg);
   color: var(--btn-color);
   border: 2px solid var(--btn-bg);
@@ -37,7 +38,7 @@
   @media (any-hover: hover) {
     &:hover {
       background-color: var(--btn-bg);
-      color: var(--color-white);
+      color: var(--color-text-on-primary);
     }
   }
 }

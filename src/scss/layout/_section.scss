@@ -1,3 +1,5 @@
+@use "../base/breakpoints" as *;
+
 @scope (.section) {
   :scope {
     padding-block: var(--section-padding-y);
@@ -15,4 +17,8 @@
     gap: 1.5rem;
     flex-wrap: wrap;
   }
+}
+
+.section-alt {
+  background-color: var(--color-bg-alt);
 }
