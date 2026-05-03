@@ -262,3 +262,8 @@ yarn prettier --write src/  # フォーマット実行
 ## ライセンス
 
 [MIT](https://opensource.org/licenses/MIT) — 商用・非商用問わず自由にご利用ください。
+
+### 同梱画像の出典
+
+- `src/images/sample.jpg`: [Unsplash](https://unsplash.com/photos/photo-1557683316-973673baf926) — 自分のサイトで使う際は差し替えてください。
+- `src/public/images/ogp.svg` `favicon.svg`: 本テンプレート用に作成したダミー画像（自由に差し替え可能）。
