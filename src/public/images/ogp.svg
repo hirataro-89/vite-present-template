@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#d4f4f8"/>
+  <rect width="1200" height="630" fill="#eaf7fa"/>
   <rect x="80" y="80" width="1040" height="470" rx="20" fill="#ffffff"/>
   <g transform="translate(120, 200)">
-    <rect width="72" height="72" rx="14" fill="#5ed4ee"/>
-    <text x="36" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">A</text>
+    <rect width="72" height="72" rx="14" fill="#1a8fa8"/>
+    <text x="36" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">V</text>
   </g>
-  <text x="220" y="252" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', sans-serif" font-size="38" font-weight="500" fill="#2ab0cc">Aozora Web Works</text>
-  <text x="120" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', sans-serif" font-size="56" font-weight="700" fill="#1f2933">伝えたいことを、ちゃんと届ける</text>
+  <text x="220" y="252" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', sans-serif" font-size="38" font-weight="500" fill="#1a8fa8">Vite Site Template</text>
+  <text x="120" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', sans-serif" font-size="56" font-weight="700" fill="#1f2933">そのまま使える、</text>
   <text x="120" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', sans-serif" font-size="56" font-weight="700" fill="#1f2933">Webサイト制作テンプレート</text>
-  <line x1="120" y1="490" x2="200" y2="490" stroke="#5ed4ee" stroke-width="3"/>
+  <line x1="120" y1="490" x2="200" y2="490" stroke="#1a8fa8" stroke-width="3"/>
 </svg>
