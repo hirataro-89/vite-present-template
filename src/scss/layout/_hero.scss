@@ -4,13 +4,13 @@
   :scope {
     container-type: inline-size;
     padding-block: clamp(3.5rem, 10vw, 6.5rem);
-    background-color: var(--color-bg-hero);
+    background-color: var(--color-bg-alt);
   }
 
   .eyebrow {
     display: inline-block;
     margin-block-end: 1.25rem;
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
     font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: 0.04em;

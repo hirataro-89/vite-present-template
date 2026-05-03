@@ -17,7 +17,7 @@
     align-items: flex-start;
     gap: 1rem;
     padding: 1.25rem 1.5rem;
-    background-color: var(--color-surface);
+    background-color: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
   }
@@ -30,8 +30,8 @@
     width: 2rem;
     height: 2rem;
     border-radius: var(--radius-pill);
-    background-color: var(--color-primary-dark);
-    color: var(--color-text-on-primary);
+    background-color: var(--color-primary);
+    color: #ffffff;
     font-size: 0.875rem;
     font-weight: 700;
   }
@@ -47,10 +47,10 @@
 code {
   display: inline-block;
   padding: 0.125rem 0.4rem;
-  background-color: var(--color-neutral-100);
+  background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: 4px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.875em;
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
 }

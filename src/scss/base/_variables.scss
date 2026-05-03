@@ -2,40 +2,15 @@
 
 :root {
   // ─────────────────────────────────────────────
-  // Brand Color（指定: #5ED4EE / #D4F4F8 系）
+  // Color Tokens
   // ─────────────────────────────────────────────
-  --color-brand: #5ed4ee;
-  --color-brand-dark: #1a8fa8; // テキスト用にコントラスト確保
-  --color-brand-soft: #eaf7fa; // hero背景用に少し落としたトーン
-
-  // ─────────────────────────────────────────────
-  // Neutral（warm off-white 〜 warm sand のレイヤー）
-  //   真っ白を避け、生活感のある温かみのある中性色で構成
-  // ─────────────────────────────────────────────
-  --color-neutral-50: #fcfbf8; // page background
-  --color-neutral-100: #f4f1ea; // section-alt（warm sand）
-  --color-neutral-200: #e8e4da; // border
-  --color-neutral-700: #5b6770; // sub text
-  --color-neutral-900: #1f2933; // main text
-  --color-neutral-950: #1b2530; // footer bg
-
-  // ─────────────────────────────────────────────
-  // Semantic Tokens（実装時はこちらを参照する）
-  // ─────────────────────────────────────────────
-  --color-primary: var(--color-brand);
-  --color-primary-dark: var(--color-brand-dark);
-
-  --color-text: var(--color-neutral-900);
-  --color-text-muted: var(--color-neutral-700);
-  --color-text-on-primary: #ffffff;
-  --color-text-on-dark: #ffffff;
-
-  --color-bg: var(--color-neutral-50); // ページ全体の地
-  --color-bg-hero: var(--color-brand-soft); // ヒーローのみ水色
-  --color-bg-alt: var(--color-neutral-100); // section-alt（warm sand）
-  --color-surface: #ffffff; // カード等の浮いた面
-  --color-border: var(--color-neutral-200);
-  --color-footer-bg: var(--color-neutral-950);
+  --color-primary: #1a8fa8;
+  --color-bg: #fcfbf8;
+  --color-bg-alt: #f4f1ea;
+  --color-text: #1f2933;
+  --color-text-muted: #5b6770;
+  --color-border: #e8e4da;
+  --color-black: #1f2933;
 
   // ─────────────────────────────────────────────
   // Typography
@@ -56,8 +31,8 @@
   --transition-base: 0.3s ease;
   --radius-pill: calc(infinity * 1px);
   --radius-card: 12px;
-  --shadow-card: 0 1px 2px rgba(31, 41, 51, 0.04),
-    0 4px 12px rgba(31, 41, 51, 0.04);
+  --shadow-card: 0 1px 2px oklch(from var(--color-black) l c h / 0.04),
+    0 4px 12px oklch(from var(--color-black) l c h / 0.04);
 }
 
 // md（768px）以上で値を上書き
