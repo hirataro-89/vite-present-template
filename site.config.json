@@ -1,0 +1,12 @@
+{
+  "siteName": "Aozora Web Works",
+  "title": "Aozora Web Works | Webサイト制作のテンプレート",
+  "description": "中小企業・店舗・個人事業のためのWebサイト制作テンプレート。シンプルな構成と読みやすいデザインで、必要な情報をしっかり届けます。",
+  "url": "https://example.com",
+  "locale": "ja",
+  "ogType": "website",
+  "ogImage": "/images/ogp.svg",
+  "twitterCard": "summary_large_image",
+  "favicon": "/images/favicon.svg",
+  "copyright": "© 2025 Aozora Web Works."
+}
