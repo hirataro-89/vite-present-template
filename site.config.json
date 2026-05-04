@@ -5,7 +5,7 @@
   "url": "https://example.com",
   "locale": "ja",
   "ogType": "website",
-  "ogImage": "/images/ogp.svg",
+  "ogImage": "/images/ogp.png",
   "twitterCard": "summary_large_image",
   "favicon": "/images/favicon.svg",
   "copyright": "© 2026 Vite Site Template."
