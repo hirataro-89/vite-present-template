@@ -272,5 +272,5 @@ yarn prettier --write src/  # フォーマット実行
 ### 同梱画像の出典
 
 - `src/images/sample.jpg`: [Unsplash](https://unsplash.com/photos/photo-1557683316-973673baf926) — 自分のサイトで使う際は差し替えてください。
-- `src/public/images/ogp.png` / `ogp.svg`: 本テンプレート用に作成したダミー画像（自由に差し替え可能）。OGPは主要SNSがSVGに非対応のため**PNGを必ず用意してください**。
+- `src/public/images/ogp.png`: 本テンプレート用に作成したダミー画像（自由に差し替え可能）。OGPは主要SNSがSVGに非対応のため**PNGまたはJPGを使ってください**。
 - `src/public/images/favicon.svg` / `favicon.png` / `apple-touch-icon.png`: SVGをモダンブラウザで優先し、PNGをフォールバックとして併用しています。
