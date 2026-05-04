@@ -41,7 +41,9 @@ src/scss/
 └── components/
     ├── _index.scss
     ├── _button.scss         ← .button / .button-outline
-    └── _section-title.scss
+    ├── _card.scss           ← サービスセクションのカード
+    ├── _section-title.scss
+    └── _steps.scss          ← 使い方セクションの手順リスト
 ```
 
 `style.scss` はディレクトリ単位で読み込むだけ:
@@ -60,25 +62,37 @@ src/scss/
 
 ## デザイントークン
 
-`base/_variables.scss` に定義しています:
+`base/_variables.scss` に定義しています。色変数は **必要最小限の7個** をフラットに定義しています（階層を増やすと「どれが本物の色定義か」が辿りづらくなるため）。
 
 ```scss
 :root {
-  // Colors
-  --color-primary: #007bff;
-  --color-text: #333;
-  // ...
+  // Color（用途で命名、hexで直接定義）
+  --color-primary: #1a8fa8;
+  --color-bg: #fcfbf8;
+  --color-bg-alt: #f4f1ea;
+  --color-text: #1f2933;
+  --color-text-muted: #5b6770;
+  --color-border: #e8e4da;
+  --color-black: #1f2933;  // shadow等の元色
 
   // Layout
   --container-max-width: 1200px;
-  --section-padding-y: 5rem;
+  --section-padding-y: 3rem;
 
   // Effects
   --transition-base: 0.3s ease;
+  --shadow-card: 0 1px 2px oklch(from var(--color-black) l c h / 0.04),
+    0 4px 12px oklch(from var(--color-black) l c h / 0.04);
 }
 ```
 
-色を変えたい場合は、ここの値を書き換えるだけで全体に反映されます。
+色を変えたい場合は、`--color-primary` を書き換えるだけでサイト全体のテーマカラーが切り替わります。
+
+### shadow を oklch で派生させる
+
+`--shadow-card` は `--color-black` から `oklch(from ...)` を使って透明度を派生しています。`rgba(31, 41, 51, 0.04)` のようにマジックナンバーを書くより、元色を変数化して派生させたほうが、shadow の色味を一括で変えられてメンテしやすくなります。
+
+> `oklch()` は Chrome 111+ / Safari 16.4+ / Firefox 113+ で動作します。古いブラウザもサポートする場合は `rgba()` に書き戻してください。
 
 ---
 
@@ -89,7 +103,7 @@ src/scss/
 | 変数 | デフォルト | 役割 |
 |---|---|---|
 | `--btn-bg` | `var(--color-primary)` | 背景色・ボーダー色 |
-| `--btn-color` | `var(--color-white)` | テキスト色（`.button` のみ） |
+| `--btn-color` | `#ffffff` | テキスト色（`.button` のみ） |
 | `--btn-font-size` | `1rem` | サイズ感 |
 
 例: ヘッダー内のボタンを小さくする
@@ -157,7 +171,7 @@ mixin を使いたい SCSS ファイルの先頭で `@use` してから呼び出
 @include mq(md) {
   :root {
     --container-padding: 2rem;
-    --section-padding-y: 5rem;
+    --section-padding-y: 6rem;
   }
 }
 ```
