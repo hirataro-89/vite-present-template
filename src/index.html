@@ -1,139 +1,142 @@
-<!DOCTYPE html>
-<html lang="{{locale}}">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{title}}</title>
-  <meta name="description" content="{{description}}" />
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite Site Template | Webサイト制作のテンプレート</title>
+    <meta
+      name="description"
+      content="中小企業・店舗・個人事業のためのWebサイト制作テンプレート。シンプルな構成と読みやすいデザインで、必要な情報をしっかり届けます。"
+    />
 
-  <!-- OGP -->
-  <meta property="og:type" content="{{ogType}}" />
-  <meta property="og:title" content="{{title}}" />
-  <meta property="og:description" content="{{description}}" />
-  <meta property="og:url" content="{{url}}" />
-  <meta property="og:image" content="{{ogImage}}" />
-  <meta name="twitter:card" content="{{twitterCard}}" />
+    <!-- OGP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vite Site Template | Webサイト制作のテンプレート" />
+    <meta
+      property="og:description"
+      content="中小企業・店舗・個人事業のためのWebサイト制作テンプレート。シンプルな構成と読みやすいデザインで、必要な情報をしっかり届けます。"
+    />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:image" content="/images/ogp.png" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="{{favicon}}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 
-  <!-- Google Fonts: Noto Sans JP -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <h1>
-        <a class="logo-link" href="#">{{siteName}}</a>
-      </h1>
-      <nav>
-        <ul class="nav-list">
-          <li><a class="nav-link" href="#how-to-use">使い方</a></li>
-          <li><a class="nav-link" href="#service">サービス</a></li>
-          <li><a class="button" href="#">お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
       <div class="container">
-        <p class="eyebrow">Vite Static Site Template</p>
-        <h2 class="main-title">
-          そのまま使える、<br />
-          Webサイト制作テンプレート。
-        </h2>
-        <p class="sub-title">
-          Vite + Sass + モダンCSSのミニマルな制作環境です。<br />
-          設定ファイルと本文を書き換えるだけで、あなたのサイトとして公開できます。
-        </p>
-        <div class="hero-actions">
-          <a class="button" href="#how-to-use">使い方を見る</a>
-          <a class="button-outline" href="#service">デモを見る</a>
-        </div>
-        <img class="hero-image" src="./images/sample.jpg" alt="" width="1200" height="840" loading="eager" />
-      </div>
-    </section>
-
-    <section id="how-to-use" class="section">
-      <div class="container">
-        <h2 class="section-title">使い方</h2>
-        <p class="text">
-          以下の4ステップで、このテンプレートをあなたのサイトとして公開できます。<br />
-          詳しい手順は、同梱の <code>README.md</code> をご覧ください。
-        </p>
-        <ol class="steps">
-          <li class="steps-item">
-            <span class="steps-num">1</span>
-            <p class="steps-text"><code>site.config.json</code> を編集してサイト名・タイトル・OGPなどを設定</p>
-          </li>
-          <li class="steps-item">
-            <span class="steps-num">2</span>
-            <p class="steps-text"><code>src/index.html</code> の本文を自分のコンテンツに書き換える</p>
-          </li>
-          <li class="steps-item">
-            <span class="steps-num">3</span>
-            <p class="steps-text"><code>src/scss/base/_variables.scss</code> でブランドカラーを変更</p>
-          </li>
-          <li class="steps-item">
-            <span class="steps-num">4</span>
-            <p class="steps-text"><code>yarn build</code> でビルドして <code>dist/</code> をサーバーにアップロード</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="service" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">サービス</h2>
-        <ul class="card-grid">
-          <li class="card">
-            <p class="card-number">01</p>
-            <h3 class="card-title">Webサイト制作</h3>
-            <p class="card-text">
-              コーポレートサイトや店舗サイトを、ヒアリングから公開まで一貫してサポートします。
-            </p>
-          </li>
-          <li class="card">
-            <p class="card-number">02</p>
-            <h3 class="card-title">サイトリニューアル</h3>
-            <p class="card-text">
-              古くなったサイトを、スマホ対応・読みやすさ・更新しやすさの観点でリニューアルします。
-            </p>
-          </li>
-          <li class="card">
-            <p class="card-number">03</p>
-            <h3 class="card-title">運用・更新サポート</h3>
-            <p class="card-text">
-              公開後の更新作業や軽微な修正、ちょっとした困りごとを月額プランでサポートします。
-            </p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content">
-        <a class="logo-link" href="#">{{siteName}}</a>
+        <h1>
+          <a class="logo-link" href="#">Vite Site Template</a>
+        </h1>
         <nav>
           <ul class="nav-list">
             <li><a class="nav-link" href="#how-to-use">使い方</a></li>
             <li><a class="nav-link" href="#service">サービス</a></li>
+            <li><a class="button" href="#">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
-      <p class="copy">{{copyright}}</p>
-    </div>
-  </footer>
+    </header>
 
-  <script type="module" src="/script.js"></script>
-</body>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">Vite Static Site Template</p>
+          <h2 class="main-title">
+            そのまま使える、<br />
+            Webサイト制作テンプレート。
+          </h2>
+          <p class="sub-title">
+            Vite + Sass + モダンCSSのミニマルな制作環境です。<br />
+            設定ファイルと本文を書き換えるだけで、あなたのサイトとして公開できます。
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#how-to-use">使い方を見る</a>
+            <a class="button-outline" href="#service">デモを見る</a>
+          </div>
+          <img class="hero-image" src="./assets/images/sample.jpg" alt="" width="1200" height="840" loading="eager" />
+        </div>
+      </section>
+
+      <section id="how-to-use" class="section">
+        <div class="container">
+          <h2 class="section-title">使い方</h2>
+          <p class="text">
+            以下の4ステップで、このテンプレートをあなたのサイトとして公開できます。<br />
+            詳しい手順は、同梱の <code>README.md</code> をご覧ください。
+          </p>
+          <ol class="steps">
+            <li class="steps-item">
+              <span class="steps-num">1</span>
+              <p class="steps-text">
+                <code>src/index.html</code> の head 内のメタ情報（タイトル・OGP・faviconなど）を直接編集
+              </p>
+            </li>
+            <li class="steps-item">
+              <span class="steps-num">2</span>
+              <p class="steps-text"><code>src/index.html</code> の本文を自分のコンテンツに書き換える</p>
+            </li>
+            <li class="steps-item">
+              <span class="steps-num">3</span>
+              <p class="steps-text"><code>src/scss/base/_variables.scss</code> でブランドカラーを変更</p>
+            </li>
+            <li class="steps-item">
+              <span class="steps-num">4</span>
+              <p class="steps-text"><code>yarn build</code> でビルドして <code>dist/</code> をサーバーにアップロード</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="service" class="section section-alt">
+        <div class="container">
+          <h2 class="section-title">サービス</h2>
+          <ul class="card-grid">
+            <li class="card">
+              <p class="card-number">01</p>
+              <h3 class="card-title">Webサイト制作</h3>
+              <p class="card-text">コーポレートサイトや店舗サイトを、ヒアリングから公開まで一貫してサポートします。</p>
+            </li>
+            <li class="card">
+              <p class="card-number">02</p>
+              <h3 class="card-title">サイトリニューアル</h3>
+              <p class="card-text">
+                古くなったサイトを、スマホ対応・読みやすさ・更新しやすさの観点でリニューアルします。
+              </p>
+            </li>
+            <li class="card">
+              <p class="card-number">03</p>
+              <h3 class="card-title">運用・更新サポート</h3>
+              <p class="card-text">公開後の更新作業や軽微な修正、ちょっとした困りごとを月額プランでサポートします。</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content">
+          <a class="logo-link" href="#">Vite Site Template</a>
+          <nav>
+            <ul class="nav-list">
+              <li><a class="nav-link" href="#how-to-use">使い方</a></li>
+              <li><a class="nav-link" href="#service">サービス</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="copy">© 2026 Vite Site Template.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/assets/js/script.js"></script>
+  </body>
 </html>
