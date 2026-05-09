@@ -1,7 +1,7 @@
 .button,
 .button-outline {
   --btn-bg: var(--color-primary);
-  --btn-color: #ffffff;
+  --btn-color: var(--color-white);
 
   display: inline-flex;
   align-items: center;
@@ -38,7 +38,7 @@
   @media (any-hover: hover) {
     &:hover {
       background-color: var(--btn-bg);
-      color: #ffffff;
+      color: var(--color-white);
     }
   }
 }

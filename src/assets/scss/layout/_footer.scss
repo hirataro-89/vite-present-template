@@ -3,7 +3,7 @@
 @scope (.footer) {
   :scope {
     background-color: #1b2530;
-    color: #ffffff;
+    color: var(--color-white);
     margin-block-start: 4rem;
     padding-block: 3rem 2rem;
   }

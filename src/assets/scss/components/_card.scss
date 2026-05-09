@@ -16,7 +16,7 @@
 @scope (.card) {
   :scope {
     padding: 1.75rem 1.5rem;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
