@@ -56,7 +56,7 @@ src/assets/scss/
 
 ファイルを追加するときは各ディレクトリの `_index.scss` に1行追記するだけです。
 
-> **`layout/_index.scss` の順序**: `container` を `header` より前に記述してください。`@scope (.header)` 内の `.container` 追加スタイルが後勝ちになる順序を保証するためです。
+> **`layout/_index.scss` の順序**: `_header.scss` 内では `@scope (.header) { .container { ... } }` で `.container` のスタイルを上書きしています。CSS は後に読み込まれた宣言が勝つため、ベースの `_container.scss` を先に、上書き側の `_header.scss` を後に読み込む順序にしてください。
 
 ---
 
@@ -108,9 +108,7 @@ src/assets/scss/
 
 ### shadow を oklch で派生させる
 
-`--shadow-card` は `--color-black` から `oklch(from ...)` を使って透明度を派生しています。`rgba(31, 41, 51, 0.04)` のようにマジックナンバーを書くより、元色を変数化して派生させたほうが、shadow の色味を一括で変えられてメンテしやすくなります。
-
-> `oklch()` は Chrome 111+ / Safari 16.4+ / Firefox 113+ で動作します。古いブラウザもサポートする場合は `rgba()` に書き戻してください。
+`--shadow-card` は `--color-black` から `oklch(from ...)` を使って透明度を派生しています。`rgba()` で色を直書きするより、`oklch(from var(--color-black) ...)` で元色から派生させたほうが、`--color-black` を変えるだけで shadow の色味も自動で追従します。
 
 ---
 
@@ -118,11 +116,13 @@ src/assets/scss/
 
 `.button` と `.button-outline` は外部からCSS変数で見た目を上書きできます。
 
-| 変数              | デフォルト             | 役割                   |
-| ----------------- | ---------------------- | ---------------------- |
-| `--btn-bg`        | `var(--color-primary)` | 背景色・ボーダー色     |
-| `--btn-color`     | `var(--color-white)`   | `.button` のテキスト色 |
-| `--btn-font-size` | `1rem`                 | サイズ感               |
+| 変数              | デフォルト                          | 役割                   |
+| ----------------- | ----------------------------------- | ---------------------- |
+| `--btn-bg`        | `var(--color-primary)`              | 背景色・ボーダー色     |
+| `--btn-color`     | `var(--color-white)`                | `.button` のテキスト色 |
+| `--btn-font-size` | `1rem`（`var()` のフォールバック）  | サイズ感               |
+
+`--btn-bg` / `--btn-color` は `.button, .button-outline` で実定義されたデフォルト値、`--btn-font-size` は `font-size: var(--btn-font-size, 1rem)` のフォールバック値として `1rem` が使われています（変数自体は未定義）。
 
 例: ヘッダー内のボタンを小さくする
 
@@ -175,27 +175,6 @@ mixin を使いたい SCSS ファイルの先頭で `@use` してから呼び出
 
 引数省略時は `md`（768px）が使われます。
 
-### CSS変数を使ったレスポンシブ（推奨）
-
-このテンプレートでは、各コンポーネントで `mq()` を散らすのではなく、`_variables.scss` で **CSS変数自体をレスポンシブにする** アプローチを採っています。
-
-```scss
-// _variables.scss
-:root {
-  --container-padding: 1rem;
-  --section-padding-y: 3rem;
-}
-
-@include mq(md) {
-  :root {
-    --container-padding: 2rem;
-    --section-padding-y: 6rem;
-  }
-}
-```
-
-これにより、`var(--section-padding-y)` を参照しているすべての箇所（hero / section）が自動的にレスポンシブになります。コンポーネント側の SCSS は `mq()` を意識する必要がありません。
-
 ---
 
 ## ブラウザサポート
@@ -205,5 +184,6 @@ mixin を使いたい SCSS ファイルの先頭で `@use` してから呼び出
 | `@scope`       | Chrome 118+ / Safari 17.4+ / Firefox 128+ |
 | `:where()`     | Chrome 88+ / Safari 14+ / Firefox 78+     |
 | コンテナクエリ | Chrome 105+ / Safari 16+ / Firefox 110+   |
+| `oklch()`      | Chrome 111+ / Safari 16.4+ / Firefox 113+ |
 
-古いブラウザ対応が必要な場合は、別の書き方（`@scope` → ネスト or BEM、コンテナクエリ → メディアクエリ など）に置き換えてご利用ください。
+古いブラウザ対応が必要な場合は、別の書き方（`@scope` → ネスト or BEM、コンテナクエリ → メディアクエリ、`oklch()` → `rgba()` など）に置き換えてご利用ください。
